@@ -1,18 +1,18 @@
 //
-//  MyTabBarController.m
+//  MyShoppingCarViewController.m
 //  DianShang
 //
 //  Created by He on 16/11/6.
 //  Copyright © 2016年 He. All rights reserved.
 //
 
-#import "MyTabBarController.h"
+#import "MyShoppingCarViewController.h"
 
-@interface MyTabBarController ()
+@interface MyShoppingCarViewController ()
 
 @end
 
-@implementation MyTabBarController
+@implementation MyShoppingCarViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

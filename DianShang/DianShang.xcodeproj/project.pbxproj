@@ -11,7 +11,12 @@
 		871BA8DD1DCDE22E000BC266 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 871BA8DC1DCDE22E000BC266 /* Assets.xcassets */; };
 		871BA8E01DCDE22E000BC266 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 871BA8DE1DCDE22E000BC266 /* LaunchScreen.storyboard */; };
 		87750EA81DCEB81100794D04 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87750E9F1DCEB81100794D04 /* AppDelegate.m */; };
-		87750EAB1DCEBA2400794D04 /* MyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87750EAA1DCEBA2400794D04 /* MyTabBarController.m */; };
+		87750EAE1DCEC15B00794D04 /* MyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87750EAD1DCEC15B00794D04 /* MyTabBarController.m */; };
+		87750EB11DCEC18800794D04 /* MyHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87750EB01DCEC18800794D04 /* MyHomeViewController.m */; };
+		87750EB41DCEC1B000794D04 /* MyCatagoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87750EB31DCEC1B000794D04 /* MyCatagoriesViewController.m */; };
+		87750EB71DCEC1CF00794D04 /* MyShoppingCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87750EB61DCEC1CF00794D04 /* MyShoppingCarViewController.m */; };
+		87750EBA1DCEC22D00794D04 /* MyMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87750EB91DCEC22D00794D04 /* MyMineViewController.m */; };
+		87750EBD1DCEC3F800794D04 /* MyNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87750EBC1DCEC3F800794D04 /* MyNaviViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,8 +27,18 @@
 		871BA8E11DCDE22E000BC266 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87750E9E1DCEB81100794D04 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		87750E9F1DCEB81100794D04 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		87750EA91DCEBA2400794D04 /* MyTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTabBarController.h; sourceTree = "<group>"; };
-		87750EAA1DCEBA2400794D04 /* MyTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTabBarController.m; sourceTree = "<group>"; };
+		87750EAC1DCEC15B00794D04 /* MyTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTabBarController.h; sourceTree = "<group>"; };
+		87750EAD1DCEC15B00794D04 /* MyTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTabBarController.m; sourceTree = "<group>"; };
+		87750EAF1DCEC18800794D04 /* MyHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyHomeViewController.h; sourceTree = "<group>"; };
+		87750EB01DCEC18800794D04 /* MyHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHomeViewController.m; sourceTree = "<group>"; };
+		87750EB21DCEC1B000794D04 /* MyCatagoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCatagoriesViewController.h; sourceTree = "<group>"; };
+		87750EB31DCEC1B000794D04 /* MyCatagoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCatagoriesViewController.m; sourceTree = "<group>"; };
+		87750EB51DCEC1CF00794D04 /* MyShoppingCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyShoppingCarViewController.h; sourceTree = "<group>"; };
+		87750EB61DCEC1CF00794D04 /* MyShoppingCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyShoppingCarViewController.m; sourceTree = "<group>"; };
+		87750EB81DCEC22D00794D04 /* MyMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMineViewController.h; sourceTree = "<group>"; };
+		87750EB91DCEC22D00794D04 /* MyMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMineViewController.m; sourceTree = "<group>"; };
+		87750EBB1DCEC3F800794D04 /* MyNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNaviViewController.h; sourceTree = "<group>"; };
+		87750EBC1DCEC3F800794D04 /* MyNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNaviViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +113,8 @@
 		87750E921DCEB81100794D04 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				87750EB21DCEC1B000794D04 /* MyCatagoriesViewController.h */,
+				87750EB31DCEC1B000794D04 /* MyCatagoriesViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -129,6 +146,8 @@
 		87750E961DCEB81100794D04 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				87750EAF1DCEC18800794D04 /* MyHomeViewController.h */,
+				87750EB01DCEC18800794D04 /* MyHomeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -160,6 +179,8 @@
 		87750E9A1DCEB81100794D04 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				87750EB81DCEC22D00794D04 /* MyMineViewController.h */,
+				87750EB91DCEC22D00794D04 /* MyMineViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -183,8 +204,6 @@
 			children = (
 				87750E9E1DCEB81100794D04 /* AppDelegate.h */,
 				87750E9F1DCEB81100794D04 /* AppDelegate.m */,
-				87750EA91DCEBA2400794D04 /* MyTabBarController.h */,
-				87750EAA1DCEBA2400794D04 /* MyTabBarController.m */,
 				87750EA01DCEB81100794D04 /* Category */,
 				87750EA11DCEB81100794D04 /* Controller */,
 				87750EA21DCEB81100794D04 /* Model */,
@@ -203,6 +222,10 @@
 		87750EA11DCEB81100794D04 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				87750EAC1DCEC15B00794D04 /* MyTabBarController.h */,
+				87750EAD1DCEC15B00794D04 /* MyTabBarController.m */,
+				87750EBB1DCEC3F800794D04 /* MyNaviViewController.h */,
+				87750EBC1DCEC3F800794D04 /* MyNaviViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -234,6 +257,8 @@
 		87750EA51DCEB81100794D04 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				87750EB51DCEC1CF00794D04 /* MyShoppingCarViewController.h */,
+				87750EB61DCEC1CF00794D04 /* MyShoppingCarViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -323,7 +348,12 @@
 			files = (
 				87750EA81DCEB81100794D04 /* AppDelegate.m in Sources */,
 				871BA8D21DCDE22E000BC266 /* main.m in Sources */,
-				87750EAB1DCEBA2400794D04 /* MyTabBarController.m in Sources */,
+				87750EAE1DCEC15B00794D04 /* MyTabBarController.m in Sources */,
+				87750EB71DCEC1CF00794D04 /* MyShoppingCarViewController.m in Sources */,
+				87750EBD1DCEC3F800794D04 /* MyNaviViewController.m in Sources */,
+				87750EB11DCEC18800794D04 /* MyHomeViewController.m in Sources */,
+				87750EB41DCEC1B000794D04 /* MyCatagoriesViewController.m in Sources */,
+				87750EBA1DCEC22D00794D04 /* MyMineViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

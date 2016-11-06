@@ -1,5 +1,5 @@
 //
-//  MyTabBarController.h
+//  MyNaviViewController.h
 //  DianShang
 //
 //  Created by He on 16/11/6.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyTabBarController : UITabBarController
+@interface MyNaviViewController : UINavigationController
 
 @end
