@@ -7,92 +7,200 @@
 //
 
 #import "MyHomeViewController.h"
+#import "MyOneViewController.h"
+#import "MyTwoViewController.h"
+#import "MyThreeViewController.h"
+#import "MyFourViewController.h"
+#import "MyFiveViewController.h"
+#import "MyTitleButton.h"
+#import "MySearchViewController.h"
 
 @interface MyHomeViewController ()
 
 @end
 
+@interface MyHomeViewController()<UIScrollViewDelegate>
+
+// 存放所有子控制器的view
+@property(nonatomic, weak)UIScrollView *scrollView;
+// 标题栏view
+@property(nonatomic, weak)UIView *titlesView;
+// 当前被选中的按钮
+@property(nonatomic, weak)MyTitleButton *selecetedTitleButton;
+// 标题栏底部的指示器
+@property(nonatomic, weak)UIView *titleBottomView;
+// 存放所有的标题栏按钮
+@property(nonatomic, strong)NSMutableArray *titleButtons;
+
+@end
+
 @implementation MyHomeViewController
+
+- (NSMutableArray *)titleButtons
+{
+    if (!_titleButtons) {
+        _titleButtons = [NSMutableArray array];
+    }
+    return _titleButtons;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [self setUpNav];
+
+    [self setUpChlidViewControllers];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    [self setUpScrollView];
     
-    // Configure the cell...
+    [self setUpTitlesView];
+}
+
+- (void)setUpNav
+{
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
     
-    return cell;
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"" highlightedImage:@"" target:self action:@selector(searchClick)];
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)setUpChlidViewControllers
+{
+    MyOneViewController *one = [[MyOneViewController alloc] init];
+    one.title = @"第一个";
+    [self addChildViewController:one];
+    
+    MyTwoViewController *two = [[MyTwoViewController alloc] init];
+    two.title = @"第二个";
+    [self addChildViewController:two];
+    
+    MyThreeViewController *three = [[MyThreeViewController alloc] init];
+    three.title = @"第三个";
+    [self addChildViewController:three];
+    
+    MyFourViewController *four = [[MyFourViewController alloc] init];
+    four.title = @"第四个";
+    [self addChildViewController:four];
+    
+    MyFiveViewController *five = [[MyFiveViewController alloc] init];
+    five.title = @"第五个";
+    [self addChildViewController:five];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (void)setUpScrollView
+{
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    UIScrollView *scrollView = [[UIScrollView alloc] init];
+    
+    scrollView.frame = self.view.bounds;
+    scrollView.backgroundColor = MyCommonBgColor;
+    scrollView.delegate = self;
+    scrollView.pagingEnabled = YES;
+    
+    scrollView.contentSize = CGSizeMake(self.childViewControllers.count * self.view.width, 0);
+    
+    [self.view addSubview:scrollView];
+    self.scrollView = scrollView;
+    
+    [self scrollViewDidEndScrollingAnimation:scrollView];
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+
+- (void)setUpTitlesView
+{
+    UIView *titlesView = [[UIView alloc] init];
+    titlesView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5];
+    titlesView.frame = CGRectMake(0, MyNavBarMaxY, self.view.width, 35);
+    
+    [self.view addSubview:titlesView];
+    self.titlesView = titlesView;
+    
+    NSUInteger count = self.childViewControllers.count;
+    CGFloat titleButtonW = titlesView.width / count;
+    CGFloat titleButtonH = titlesView.height;
+    for (int i = 0; i < count; i++) {
+        
+        MyTitleButton *titleButton = [MyTitleButton buttonWithType:UIButtonTypeCustom];
+        [titleButton addTarget:self action:@selector(titleButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [titlesView addSubview:titleButton];
+        [self.titleButtons addObject:titleButton];
+        
+        NSString *title = [self.childViewControllers[i] title];
+        [titleButton setTitle:title forState:UIControlStateNormal];
+        titleButton.width = titleButtonW;
+        titleButton.height = titleButtonH;
+        titleButton.x = i * titleButton.width;
+        titleButton.y = 0;
+    }
+    
+    UIView *titleBottomView = [[UIView alloc] init];
+    titleBottomView.backgroundColor = [self.titleButtons.lastObject titleColorForState:UIControlStateSelected];
+    
+//    titleBottomView.backgroundColor = [self.titleButtons.];
+    titleBottomView.height = 1;
+    titleBottomView.width = 50;
+    titleBottomView.y = titlesView.height - titleBottomView.height;
+    
+    [titlesView addSubview:titleBottomView];
+    self.titleBottomView = titleBottomView;
+    
+    MyTitleButton *firstTitleButton = self.titleButtons.firstObject;
+    
+    [firstTitleButton.titleLabel sizeToFit];
+    
+    titleBottomView.width = firstTitleButton.titleLabel.width;
+    titleBottomView.centerX = firstTitleButton.centerX;
+    
+    [self titleButtonClick:firstTitleButton];
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+#pragma mark -按钮点击
+- (void)titleButtonClick:(MyTitleButton *)titleButton
+{
+    self.selecetedTitleButton.selected = NO;
+    titleButton.selected = YES;
+    self.selecetedTitleButton = titleButton;
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        self.titleBottomView.width = titleButton.titleLabel.width;
+        self.titleBottomView.centerX = titleButton.centerX;
+    }];
+    
+    CGPoint offset = self.scrollView.contentOffset;
+    
+    offset.x = self.view.width * [self.titleButtons indexOfObject:titleButton];
+    
+    [self.scrollView setContentOffset:offset animated:YES];
 }
-*/
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)searchClick
+{
+    MySearchViewController *search = [[MySearchViewController alloc] init];
+    
+    [self.navigationController pushViewController:search animated:YES];
 }
-*/
+
+#pragma mark -<UIScrollViewDelegate>
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    int index = scrollView.contentOffset.x / scrollView.width;
+    
+    UIViewController *willShowViewController = self.childViewControllers[index];
+    
+    if (willShowViewController.isViewLoaded) return;
+    
+    willShowViewController.view.frame = scrollView.bounds;
+    
+    [scrollView addSubview:willShowViewController.view];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [self scrollViewDidEndScrollingAnimation:scrollView];
+    
+    int index = scrollView.contentOffset.x / scrollView.width;
+    [self titleButtonClick:self.titleButtons[index]];
+}
+
 
 @end
