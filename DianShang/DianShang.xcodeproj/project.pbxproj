@@ -10,6 +10,7 @@
 		871BA8D21DCDE22E000BC266 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 871BA8D11DCDE22E000BC266 /* main.m */; };
 		871BA8DD1DCDE22E000BC266 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 871BA8DC1DCDE22E000BC266 /* Assets.xcassets */; };
 		871BA8E01DCDE22E000BC266 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 871BA8DE1DCDE22E000BC266 /* LaunchScreen.storyboard */; };
+		8737BAD21DD2C53200406338 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 8737BAD11DD2C53200406338 /* Person.m */; };
 		87750EA81DCEB81100794D04 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87750E9F1DCEB81100794D04 /* AppDelegate.m */; };
 		87750EAE1DCEC15B00794D04 /* MyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87750EAD1DCEC15B00794D04 /* MyTabBarController.m */; };
 		87750EB11DCEC18800794D04 /* MyHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87750EB01DCEC18800794D04 /* MyHomeViewController.m */; };
@@ -38,6 +39,8 @@
 		871BA8DC1DCDE22E000BC266 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		871BA8DF1DCDE22E000BC266 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		871BA8E11DCDE22E000BC266 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8737BAD01DD2C53200406338 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		8737BAD11DD2C53200406338 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		87750E9E1DCEB81100794D04 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		87750E9F1DCEB81100794D04 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		87750EAC1DCEC15B00794D04 /* MyTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTabBarController.h; sourceTree = "<group>"; };
@@ -265,6 +268,8 @@
 				87750EA11DCEB81100794D04 /* Controller */,
 				87750EA21DCEB81100794D04 /* Model */,
 				87750EA31DCEB81100794D04 /* View */,
+				8737BAD01DD2C53200406338 /* Person.h */,
+				8737BAD11DD2C53200406338 /* Person.m */,
 			);
 			path = "Other-其他";
 			sourceTree = "<group>";
@@ -417,6 +422,7 @@
 				87BA31FD1DD0296A006A5C51 /* UIView+MyExtension.m in Sources */,
 				87750EAE1DCEC15B00794D04 /* MyTabBarController.m in Sources */,
 				87750EB71DCEC1CF00794D04 /* MyShoppingCarViewController.m in Sources */,
+				8737BAD21DD2C53200406338 /* Person.m in Sources */,
 				87BA32001DD02A85006A5C51 /* MySearchViewController.m in Sources */,
 				87BA31F41DD0288F006A5C51 /* MyThreeViewController.m in Sources */,
 				87BA31E61DD014EA006A5C51 /* UIBarButtonItem+MyExtension.m in Sources */,
